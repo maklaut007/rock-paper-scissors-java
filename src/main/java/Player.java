@@ -10,6 +10,6 @@ public abstract class Player {
     }
 
     abstract public void nextTurn();
-
+    abstract public String displayChoice();
     // points
 }
