@@ -18,9 +18,9 @@
 # Class diagram:
 ![My Image](https://github.com/maklaut007/rock-paper-scissors-java/blob/main/src/assets/ClassDiagram.png)
 # Player Classes:
-![My Image]((https://github.com/maklaut007/rock-paper-scissors-java/blob/main/src/assets/PlayerClasses.png)
-# GameAndHistory:
-![My Image]((https://github.com/maklaut007/rock-paper-scissors-java/blob/main/src/assets/ClassDiagram.png)
+![My Image](https://github.com/maklaut007/rock-paper-scissors-java/blob/main/src/assets/PlayerClasses.png)
+# Game And History Classes:
+![My Image](https://github.com/maklaut007/rock-paper-scissors-java/blob/main/src/assets/GameAndHistory.png)
 
 ## Dev process
 - Ask user who to play against  :heavy_check_mark:
