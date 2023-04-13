@@ -6,3 +6,11 @@
 - When the game is over, the winner should be declared.
 
 ## MVP
+
+
+## Dev process
+- Ask user who to play against  :heavy_check_mark:
+- Ask user about sign 
+- Compare two users sign
+- Generate computer answer
+- 
