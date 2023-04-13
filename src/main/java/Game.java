@@ -5,11 +5,13 @@ public class Game {
     // Asks 2 players or vs. computer
     // Calls players
     // Checks result
-    Player player1;
-    Player player2;
-
+    private Player player1;
+    private Player player2;
+    private History gameHistory;
     public Game() {
         this.player1 = new HumanPlayer();
+        this.gameHistory = new History();
+        System.out.println("\nWelcome to Rock, Paper, Scissors!");
     }
 
     /**
@@ -20,14 +22,16 @@ public class Game {
         String result = "";
         String sign1 = this.player1.getSign();
         String sign2 = this.player2.getSign();
-//        System.out.println(sign1);
-//        System.out.println(sign2);
         if ((sign1.equals("paper") && sign2.equals("rock")) || (sign1.equals("rock") && sign2.equals("scissors")) || (sign1.equals("scissors") && sign2.equals("paper"))) {
-            System.out.println("You win!");
+            result = "Player 1 Winner";
+            player1.increseScore();
         } else if ((sign1.equals("rock") && sign2.equals("paper")) || (sign1.equals("scissors") && sign2.equals("rock")) || (sign1.equals("paper") && sign2.equals("scissors"))) {
-            System.out.println("You lose!");
+            result = "Player 2 Winner";
+            player1.increseScore();
         } else
-            System.out.println("Tie!");
+            result = "Tie";
+        System.out.println(result);
+        gameHistory.addResult(result + " Player 1: " + sign1 + ", Player 2: " + sign2);
         return result;
     }
 
@@ -36,7 +40,7 @@ public class Game {
      * assign opponent to variable
      */
     public void setPlayer2() {
-        System.out.println("Who do you play against? \n type 1 if human \ntype 2 if computer");
+        System.out.println("Who do you want to play against? \ntype 1 if human \ntype 2 if computer");
         try {
             Scanner scanner = new Scanner(System.in);
             int playerType = scanner.nextInt();
@@ -60,25 +64,27 @@ public class Game {
      * after player plays the game of checks history show options again
      */
     public void mainMenuOptions(){
-        System.out.println("Welcome to Rock, Paper, Scissors!");
-        System.out.println("MAIN MENU");
+
+        System.out.println("\nMAIN MENU");
         System.out.println("=========");
-        System.out.println("1. Type 'play' to play.\n" +
-                "2. Type 'history' to view your game history.\n" +
-                "3. Type 'quit' to stop playing.");
+        System.out.println("1. Type 'play' to play.\n2. Type 'history' to view your game history.\n3. Type 'quit' to stop playing.");
         Scanner scanner = new Scanner(System.in);
         String menuChoice = scanner.nextLine();
-        if(menuChoice.toLowerCase().equals("play")){
+        if(menuChoice.equalsIgnoreCase("play")){
             this.play();
         }
-        if(menuChoice.toLowerCase().equals("history")){
-            // Display history
+        if(menuChoice.equalsIgnoreCase("history")){
+            gameHistory.displayResults(player1.getScore(), player2.getScore());
         }
-        if(menuChoice.toLowerCase().equals("quit")){
+        if(menuChoice.equalsIgnoreCase("quit")){
             return;
         }
         mainMenuOptions();
     }
+
+    /**
+     * calls players turns and displays their choices
+     */
     public void play() {
         this.setPlayer2();
         player1.nextTurn();
