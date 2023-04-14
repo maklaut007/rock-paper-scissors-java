@@ -23,10 +23,10 @@ public class Game {
         String sign1 = this.player1.getSign();
         String sign2 = this.player2.getSign();
         if ((sign1.equals("paper") && sign2.equals("rock")) || (sign1.equals("rock") && sign2.equals("scissors")) || (sign1.equals("scissors") && sign2.equals("paper"))) {
-            result = "Player 1 Winner";
+            result = this.player1.displayWinText(false);
             player1.increaseScore();
         } else if ((sign1.equals("rock") && sign2.equals("paper")) || (sign1.equals("scissors") && sign2.equals("rock")) || (sign1.equals("paper") && sign2.equals("scissors"))) {
-            result = "Player 2 Winner";
+            result = this.player2.displayWinText(true);
             player1.increaseScore();
         } else
             result = "Tie";

@@ -20,4 +20,11 @@ public class HumanPlayer extends Player{
     public String displayChoice() {
         return "User picks: " + this.getSign();
     }
+
+
+
+    @Override
+    public String displayWinText(boolean isSecondWins) {
+        return isSecondWins ? "Player 2 wins" : "Player 1 wins";
+    }
 }

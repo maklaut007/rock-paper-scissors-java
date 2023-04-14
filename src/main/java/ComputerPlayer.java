@@ -22,4 +22,10 @@ public class ComputerPlayer extends Player{
         return  "Computer picks: " + this.getSign();
     }
 
+    @Override
+    public String displayWinText(boolean isSecondWins) {
+        return "Computer wins";
+    }
+
+
 }
