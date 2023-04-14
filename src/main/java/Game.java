@@ -5,9 +5,9 @@ public class Game {
     // Asks 2 players or vs. computer
     // Calls players
     // Checks result
-    private Player player1;
+    private final Player player1;
     private Player player2;
-    private History gameHistory;
+    private final History gameHistory;
     public Game() {
         this.player1 = new HumanPlayer();
         this.gameHistory = new History();
@@ -19,7 +19,7 @@ public class Game {
      * @return text result of the round
      */
     public String compareAnswers() {
-        String result = "";
+        String result;
         String sign1 = this.player1.getSign();
         String sign2 = this.player2.getSign();
         if ((sign1.equals("paper") && sign2.equals("rock")) || (sign1.equals("rock") && sign2.equals("scissors")) || (sign1.equals("scissors") && sign2.equals("paper"))) {
