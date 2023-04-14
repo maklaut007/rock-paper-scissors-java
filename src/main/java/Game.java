@@ -15,8 +15,8 @@ public class Game {
     }
 
     /**
-     * Compares results entered by 2 players in displays result
-     * @return
+     * Compares results entered by 2 players and returns the result
+     * @return text result of the round
      */
     public String compareAnswers() {
         String result = "";
@@ -24,14 +24,13 @@ public class Game {
         String sign2 = this.player2.getSign();
         if ((sign1.equals("paper") && sign2.equals("rock")) || (sign1.equals("rock") && sign2.equals("scissors")) || (sign1.equals("scissors") && sign2.equals("paper"))) {
             result = "Player 1 Winner";
-            player1.increseScore();
+            player1.increaseScore();
         } else if ((sign1.equals("rock") && sign2.equals("paper")) || (sign1.equals("scissors") && sign2.equals("rock")) || (sign1.equals("paper") && sign2.equals("scissors"))) {
             result = "Player 2 Winner";
-            player1.increseScore();
+            player1.increaseScore();
         } else
             result = "Tie";
-        System.out.println(result);
-        gameHistory.addResult(result + " Player 1: " + sign1 + ", Player 2: " + sign2);
+        gameHistory.addResult(result + ": \t Player 1: " + sign1 + " | Player 2: " + sign2);
         return result;
     }
 
@@ -55,8 +54,6 @@ public class Game {
             System.out.println("Your input is incorrect. Try again");
             this.setPlayer2();
         }
-
-
     }
 
     /**
@@ -64,10 +61,13 @@ public class Game {
      * after player plays the game of checks history show options again
      */
     public void mainMenuOptions(){
+        System.out.println("""
+                \nMAIN MENU
+                =========
+                1. Type 'play' to play.
+                2. Type 'history' to view your game history.
+                3. Type 'quit' to stop playing.""") ;
 
-        System.out.println("\nMAIN MENU");
-        System.out.println("=========");
-        System.out.println("1. Type 'play' to play.\n2. Type 'history' to view your game history.\n3. Type 'quit' to stop playing.");
         Scanner scanner = new Scanner(System.in);
         String menuChoice = scanner.nextLine();
         if(menuChoice.equalsIgnoreCase("play")){
@@ -91,7 +91,8 @@ public class Game {
         player2.nextTurn();
         System.out.println(player1.displayChoice());
         System.out.println(player2.displayChoice());
-        this.compareAnswers();
+        System.out.println(this.compareAnswers());
+
     }
 
 }

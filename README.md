@@ -3,16 +3,16 @@
 
 ## MVP
 # Bronze
-- Ask user who to play against
-- Let user chose sign to play
-- Can play against computer
-- Can play against another player
+- Ask user who to play against :heavy_check_mark:
+- Let user chose sign to play :heavy_check_mark:
+- Can play against computer :heavy_check_mark:
+- Can play against another player :heavy_check_mark:
 # Silver
-- Display history
-- Have score for players
-
+- User can check history :heavy_check_mark:
+- User can check score :heavy_check_mark:
+- Unit tests
 # Gold
-- Can play online
+- Visual interface
 
 ## Project structure
 # Class diagram:
@@ -23,7 +23,3 @@
 ![My Image](https://github.com/maklaut007/rock-paper-scissors-java/blob/main/src/assets/GameAndHistory.png)
 
 ## Dev process
-- Ask user who to play against  :heavy_check_mark:
-- Ask user about sign 
-- Compare two users sign
-- Generate computer answer

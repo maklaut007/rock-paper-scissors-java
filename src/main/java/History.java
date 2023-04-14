@@ -15,6 +15,12 @@ public class History {
     public void addResult(String result){
         resultsList.add(result);
     }
+
+    /**
+     * displays list of results and players scores
+     * @param pOneScore
+     * @param pTwoScore
+     */
     public void displayResults(int pOneScore, int pTwoScore){
         System.out.println("Player one score: " + pOneScore + "\t\t || \t Player two score: " + pTwoScore);
         resultsList.forEach((str) -> System.out.println(str));

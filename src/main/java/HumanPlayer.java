@@ -10,6 +10,7 @@ public class HumanPlayer extends Player{
         System.out.println("Type 'rock', 'paper', or 'scissors' to play.");
         Scanner scanner = new Scanner(System.in);
         this.setSign(scanner.nextLine().toLowerCase());
+        // if user input is incorrect
         if(!this.getSign().equals("rock") && !this.getSign().equals("paper") && !this.getSign().equals("scissors")) {
             System.out.println("Sign you entered is incorrect. Try again");
         }

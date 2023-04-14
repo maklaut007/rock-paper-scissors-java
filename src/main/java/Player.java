@@ -14,7 +14,7 @@ public abstract class Player {
         this.sign = sign;
     }
 
-    public void increseScore(){
+    public void increaseScore() {
         this.score++;
     }
 
@@ -23,6 +23,6 @@ public abstract class Player {
     }
 
     abstract public void nextTurn();
+
     abstract public String displayChoice();
-    // points
 }
